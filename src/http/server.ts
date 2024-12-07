@@ -1,8 +1,11 @@
-import fastify from "fastify";
 import {PeopleHandler} from "../app/people/people-handler";
+import Fastify from 'fastify'
+import cors from '@fastify/cors'
 
-
-const server = fastify()
+const server = Fastify()
+server.register(cors, {
+    origin: true
+})
 
 // Middleware para configurar CSP
 server.addHook('onSend', async (request, reply, payload) => {
