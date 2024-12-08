@@ -9,4 +9,10 @@ export class PeopleHandler extends CrudHandler<Person,PeopleRepository,PeopleSer
     constructor(){
         super (new PeopleService())
     }
+    async login (request:any,response:any){
+        const { body } = request
+        const data = await this.service.login(body)
+
+        return response.status(202).send(data)
+    }
 }
