@@ -34,9 +34,9 @@ export class CrudHandler<T,R extends CrudRepository<T>,S extends CrudService<T,R
             throw new NotFoundError("No body")
         } 
         const id:number = request.params.id
-        await this.service.update(body, id)
+        const update = await this.service.update(body, id)
 
-        return response.status(200).send("Dados Atualizados")
+        return response.status(200).send(update)
     }
     async remove(request:any,response:any){
         const id:number = request.params.id
