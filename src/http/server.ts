@@ -24,6 +24,9 @@ server.get("/people", (request,response)=>{
 server.get("/people/:id",(request:any,response)=>{
     return peopleHandler.findById(request,response)
 })
+server.post("/people/login",(request:any,response)=>{
+    return peopleHandler.login(request,response)
+})
 server.delete("/people/:id",(request:any,response)=>{
     return peopleHandler.remove(request,response)
 })
