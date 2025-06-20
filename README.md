@@ -15,6 +15,15 @@ Implementar paginação <br>
 ## Instalação e Configuração
 
 1. Baixar o Node
-2. Configurar env
-3. ´´´´bash npm install´´´´
-4. ´´´´´bash npm run build´´´´
+2. Configurar `.env`
+3. Instalar dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Buildar o projeto:
+
+   ```bash
+   npm run build
+   ```
