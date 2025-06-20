@@ -1,4 +1,4 @@
-import {PeopleHandler} from "../app/people/people-handler";
+import {PeopleController} from "../app/people/people-controller";
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
 
@@ -13,25 +13,25 @@ server.addHook('onSend', async (request, reply, payload) => {
     return payload;
 });
 
-const peopleHandler = new PeopleHandler()
+const peopleController = new PeopleController()
 
 server.post("/people", (request,response)=>{
-    return peopleHandler.insert(request,response)
+    return peopleController.insert(request,response)
 })
 server.get("/people", (request,response)=>{
-    return peopleHandler.findAll(request,response)
+    return peopleController.findAll(request,response)
 })
 server.get("/people/:id",(request:any,response)=>{
-    return peopleHandler.findById(request,response)
+    return peopleController.findById(request,response)
 })
 server.post("/people/login",(request:any,response)=>{
-    return peopleHandler.login(request,response)
+    return peopleController.login(request,response)
 })
 server.delete("/people/:id",(request:any,response)=>{
-    return peopleHandler.remove(request,response)
+    return peopleController.remove(request,response)
 })
 server.patch("/people/:id",(request:any,response)=>{
-    return peopleHandler.update(request,response)
+    return peopleController.update(request,response)
 })
 server.listen({
     host:"0.0.0.0",

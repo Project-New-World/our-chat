@@ -4,7 +4,7 @@ import { CrudRepository } from "./crud-repository"
 import { CrudService } from "./crud-services"
 import { NotFoundError , BadRequestError} from "./errors"
 
-export class CrudHandler<T,R extends CrudRepository<T>,S extends CrudService<T,R>>{
+export class CrudController<T,R extends CrudRepository<T>,S extends CrudService<T,R>>{
     service:S
     constructor(service:S){
         this.service = service
